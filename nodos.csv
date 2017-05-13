@@ -1,0 +1,114 @@
+0;1;Observatorio;Álvaro Obregón
+1;1;Tacubaya ;Miguel Hidalgo
+2;1;Juanacatlán ;Miguel Hidalgo
+3;1;Chapultepec ;Cuauhtémoc
+4;1;Sevilla ;Cuauhtémoc
+5;1;Insurgentes ;Cuauhtémoc
+6;1;Cuauhtémoc ;Cuauhtémoc
+7;1;Balderas ;Cuauhtémoc
+8;1;Salto del Agua ;Cuauhtémoc
+9;1;Isabel la Católica ;Cuauhtémoc
+10;1;Pino Suárez ;Cuauhtémoc
+11;1;Merced ;Venustiano Carranza
+12;1;Candelaria ;Venustiano Carranza
+13;1;San Lázaro;Venustiano Carranza
+14;1;Moctezuma;Venustiano Carranza
+15;1;Balbuena;Venustiano Carranza
+16;1;Boulevard Puerto Aéreo;Venustiano Carranza
+17;1;Gómez Farías;Venustiano Carranza
+18;1;Zaragoza;Venustiano Carranza
+19;1;Pantitlán ;Venustiano Carranza
+20;7; El Rosario ;Azcapotzalco
+21;7;Aquiles Sedán ;Azcapotzalco
+22;7;Camarones ;Azcapotzalco
+23;7;Refinería ;Azcapotzalco
+24;7;Tacuba ;Miguel Hidalgo 
+25;7;San Joaquín ;Miguel Hidalgo
+26;7;Polanco ;Miguel Hidalgo
+27;7;Auditorio ;Miguel Hidalgo
+28;7;Constituyentes ;Miguel Hidalgo
+29;7;Tacubaya ;Miguel Hidalgo
+30;7;San Pedro de los Pinos ;Benito Juárez
+31;7;San Antonio ;Benito Juárez
+32;7;Mixcoac ;Benito Juárez
+33;7;Barranca del Muerto ;Benito Juárez y Álvaro Obregón 
+34;9;Tacubaya ;Miguel Hidalgo 
+35;9;Patriotismo ;Cuauhtémoc
+36;9;Chilpancingo ;Cuauhtémoc
+37;9;Centro Médico ;Cuauhtémoc
+38;9;Lázaro Cárdenas ;Cuauhtémoc
+39;9;Chabacano ;Cuauhtémoc
+40;9;Jamaica ;Venustiano Carranza 
+41;9;Mixiuhca ;Venustiano Carranza
+42;9;Velódromo ;Venustiano Carranza
+43;9;Ciudad Deportiva ;Venustiano Carranza e Iztacalco 
+44;9;Puebla ;Venustiano Carranza e Iztacalco 
+45;9;Pantitlán ;Iztacalco 
+46;2;Cuatro Caminos ;Estado de México, Municipio de Naucalpan de Juárez 
+47;2;Panteones;Miguel Hidalgo
+48;2;Tacuba ;Miguel Hidalgo
+49;2;Cuitlahuac;Miguel Hidalgo
+50;2;Popotla;Miguel Hidalgo
+51;2;Colegio Militar;Miguel Hidalgo
+52;2;Normal;Miguel Hidalgo
+53;2;San Cosme;Cuauhtémoc
+54;2;Revolución;Cuauhtémoc
+55;2;Hidalgo;Cuauhtémoc
+56;2;Bellas Artes;Cuauhtémoc
+57;2;Allende;Cuauhtémoc
+58;2;Zócalo;Cuauhtémoc
+59;2;Pino Suárez;Cuauhtémoc
+60;2;San Antonio Abad;Cuauhtémoc
+61;2;Chabacano;Cuauhtémoc
+62;2;Viaducto;Benito Juárez e Iztacalco 
+63;2;Xola;Benito Juárez
+64;2;Villa de Cortés;Benito Juárez
+65;2;Nativitas;Benito Juárez
+66;2;Portales;Benito Juárez
+67;2;Ermita;Benito Juárez
+68;2;General Anaya;Coyoacán
+69;2;Tasqueña;Coyoacán
+70;3;Indios Verdes ;Gustavo A. Madero 
+71;3;Deportivo 18 de Marzo ;Gustavo A. Madero
+72;3;Potrero ;Gustavo A. Madero
+73;3;La Raza ;Gustavo A. Madero
+74;3;Tlatelolco ;Cuauhtémoc
+75;3;Guerrero ;Cuauhtémoc
+76;3;Hidalgo ;Cuauhtémoc
+77;3;Juárez ;Cuauhtémoc
+78;3;Balderas ;Cuauhtémoc
+79;3;Niños Héroes ;Cuauhtémoc
+80;3;Hospital General ;Cuauhtémoc
+81;3;Centro Médico ;Cuauhtémoc
+82;3;Etiopía / Plaza de la Transparencia ;Benito Juárez
+83;3;Eugenia ;Benito Juárez
+84;3;División del Norte;Benito Juárez
+85;3;Zapata;Benito Juárez
+86;3;Coyoacán;Benito Juárez
+87;3;Viveros / Derechos Humanos ;Álvaro Obregón y Coyoacán 
+88;3;Miguel Angel de Quevedo;Coyoacán
+89;3;Copilco;Coyoacán
+90;3;Universidad;Coyoacán
+91;5;Pantitlán ;Venustiano Carranza
+92;5;Hangares ;Venustiano Carranza
+93;5;Terminal Aérea ;Venustiano Carranza
+94;5;Oceanía ;Venustiano Carranza 
+95;5;Aragón ;Gustavo A. Madero y Venustiano Carranza 
+96;5;Eduardo Molina ;Gustavo A. Madero y Venustiano Carranza 
+97;5;Consulado ;Gustavo A. Madero y Venustiano Carranza 
+98;5;Valle Gómez ;Gustavo A. Madero y Venustiano Carranza 
+99;5;Misterios ;Venustiano Carranza 
+100;5;La Raza ;Gustavo A. Madero 
+101;5;Autobuses del Norte ;Gustavo A. Madero 
+102;5;Instituto del Petróleo ;Gustavo A. Madero 
+103;5;Politécnico ;Gustavo A. Madero 
+104;10; Pantitlán ;Iztacalco
+105;10;Agrícola Oriental ;Iztacalco
+106;10;Canal de San Juan ;Iztacalco
+107;10;Tepalcates ;Iztapalapa
+108;10;Guelatao ;Iztapalapa
+109;10;Peñón Viejo ;Iztapalapa
+110;10;Acatitla ;Iztapalapa
+111;10;Santa Marta ;Iztapalapa
+112;10;Los Reyes ;Estado de México, Mpio. Los Reyes la Paz 
+113;10;La Paz ;Estado de México, Mpio. Los Reyes la Paz 
