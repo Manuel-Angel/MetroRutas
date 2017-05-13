@@ -19,5 +19,7 @@ public class Edge {
         this.tipo = tipo;
         this.tiempo = tiempo;
     }
-    
+    public String toString(){
+        return "{" + destino+", "+tipo+", "+ tiempo+"}";
+    }
 }

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.PriorityQueue;
 
 /**
  *
@@ -40,7 +41,7 @@ public class RutasMetro {
         }
         for(int i = 0; i < aristas.length; i++) {
             Arista ar= aristas[i];
-            adj[ar.getDe()].add(new Edge(ar.getA(), 1,ar.getTiempo()));
+            adj[ar.getDe()].add(new Edge(ar.getA(), ar.getTipo(),ar.getTiempo()));
         }
         //checar que todo sea bidireccional
         for (int i = 0; i < adj.length; i++) {
@@ -63,18 +64,27 @@ public class RutasMetro {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        /*CargarDatos cd= new CargarDatos();
-        Estacion est[] = cd.cargarEstaciones("nodos.csv");
-        Arista aristas[]= cd.cargarAristas("aristas.csv");
-        for (int i = 0; i < est.length; i++) {
-            System.out.println(est[i]);
-        }
-        for (int i = 0; i < aristas.length; i++) {
-            System.out.println(aristas[i]);
-        }*/
         RutasMetro rt=new RutasMetro();
         System.out.println("Lineas del metro disponibles: " + rt.getLineas());
         System.out.println("Delegaciones: " +rt.getDelegaciones());
+        ArrayList<Arista> ruta= rt.calcularRuta(0, 113);
+        System.out.println(ruta);
+        double tiempo=0;
+        for (int i = 0; i < ruta.size(); i++) {
+            int de, a;
+            Arista ar= ruta.get(i);
+            de=ar.getDe();
+            a=ar.getA();
+            tiempo+= ar.getTiempo();
+            System.out.print("de "+ rt.estaciones[de].getName());
+            System.out.print(" (linea "+ rt.estaciones[de].getStringLinea()+")");
+            System.out.print(" a "+ rt.estaciones[a].getName());
+            System.out.print(" (linea " +rt.estaciones[a].getStringLinea()+")");
+            if(ar.getTipo()==2){
+                System.out.println(" (cambio de linea)");
+            }else System.out.println("");
+        }
+        System.out.println("Tiempo: " +tiempo);
     }
     public ArrayList<Estacion> getEstacionPorLinea(int a){
         ArrayList<Estacion> est= new ArrayList<>();
@@ -118,5 +128,73 @@ public class RutasMetro {
         }
         return r;
     }
-    
+    public ArrayList<Arista> calcularRuta(int a, int b){
+        ArrayList<Integer> rutas= new ArrayList<Integer>();
+        PriorityQueue<NodeRoute> edges= new PriorityQueue();
+        NodeRoute[] nodos = new NodeRoute[estaciones.length];
+        
+        double dist[] = new double[estaciones.length];
+        Arrays.fill(dist, Integer.MAX_VALUE);
+        nodos[a]= new NodeRoute(-1,0, a);
+        dist[a] = 0;
+        edges.add(nodos[a]);
+        while(!edges.isEmpty()){
+            NodeRoute ed= edges.poll();
+            ArrayList<Edge> aristas= adj[ed.nodeId];
+            //System.out.println("act "+ ed.nodeId + ", "+ aristas.size()+": " + aristas.toString());
+            if(ed.w > dist[ed.nodeId])continue;
+            for (int i = 0; i < aristas.size(); i++) {
+                Edge u = aristas.get(i);
+                if(dist[ed.nodeId] + u.tiempo < dist[u.destino]){
+                    dist[u.destino] = dist[ed.nodeId] + u.tiempo;
+                    //System.out.print("de " + ed.nodeId + " " +estaciones[ed.nodeId].getName());
+                    //System.out.println(" a " + ed.nodeId + " " + estaciones[u.destino].getName());
+                    nodos[u.destino] = new NodeRoute(ed.nodeId, dist[u.destino], u.destino);
+                    edges.add(nodos[u.destino]);
+                }
+            }
+        }
+        rutas.add(b);
+        int act= b;
+        while(act!=a){
+            //System.out.println("Nodo "+ act + " " + nodos[act]);
+            act= nodos[act].from;
+            rutas.add(act);
+        }
+        ArrayList<Arista> resp= new ArrayList<>();
+        for (int i = rutas.size()-1; i >=1; i--) {
+            int destino = rutas.get(i-1);
+            ArrayList<Edge> ed= adj[rutas.get(i)];
+            for (int j = 0; j < ed.size(); j++) {
+                Edge edgeAc = ed.get(j);
+                if(edgeAc.destino == destino){
+                    resp.add(new Arista(rutas.get(i),destino,edgeAc.tipo,edgeAc.tiempo));
+                }
+            }
+        }
+        return resp;
+    }
+    class NodeRoute implements Comparable<NodeRoute>{
+        int from;
+        double w;
+        int nodeId;
+        public NodeRoute(int f, double w, int nodeId){
+            from = f;
+            this.w= w;
+            this.nodeId=nodeId;
+        }
+        public NodeRoute(int f, int nodeId){
+            this(f,Integer.MAX_VALUE, nodeId);
+        }
+        @Override
+        public int compareTo(NodeRoute t) {
+            if(this.w == t.w)return 0;
+            if(this.w < t.w)return -1;
+            return 1;
+        }
+        public String toString(){
+            return "{"+nodeId+","+w+"}";
+        }
+    }
 }
+
